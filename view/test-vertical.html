@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+            background: #456990;
+            color: #fff;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+        /* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        /* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        
+        .timeline ul {
+            padding: 50px 0;
+        }
+        
+        .timeline ul li {
+            list-style-type: none;
+            position: relative;
+            width: 4px;
+            margin: 0 auto;
+            background: #03e0f8;
+        }
+        
+        .timeline ul li:nth-last-child(1) {
+            background: none;
+        }
+        
+        .timeline ul li::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: inherit;
+        }
+        
+        .timeline ul li div {
+            position: relative;
+            bottom: 0;
+            width: 300px;
+            height: 225px;
+        }
+        
+        .timeline ul li:nth-child(odd) div {
+            left: 85px;
+        }
+        
+        .timeline ul li:nth-child(even) div {
+            left: -380px;
+            text-align: right;
+        }
+        
+        time {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #03e0f8;
+        }
+        /* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        
+        .timeline ul li::after {
+            transition: background .5s ease-in-out;
+        }
+        
+        .timeline ul li.in-view::after {
+            background: #03e0f8;
+        }
+        
+        .timeline ul li div .item-tittle {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+        
+        .timeline ul li div {
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease-in-out;
+        }
+        
+        .timeline ul li:nth-child(odd) div {
+            transform: translate3d(200px, 0, 0);
+        }
+        
+        .timeline ul li:nth-child(even) div {
+            transform: translate3d(-200px, 0, 0);
+        }
+        
+        .timeline ul li.in-view div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+        /* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        
+        @media screen and (max-width: 900px) {
+            .timeline ul li div {
+                width: 250px;
+            }
+            .timeline ul li:nth-child(even) div {
+                left: -289px;
+                /*250+45-6*/
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .timeline ul li {
+                margin-left: 20px;
+                text-align: left;
+                padding-bottom: 20px;
+            }
+            .timeline ul li div {
+                width: calc(80vw - 60px);
+            }
+            .timeline ul li:nth-child(even) div {
+                left: 65px;
+                text-align: left;
+            }
+            .timeline ul li:nth-child(odd) div {
+                left: 65px;
+                text-align: left;
+            }
+        }
+        
+        @media screen and (max-width: 400px) {
+            .timeline ul li {
+                margin-left: 20px;
+                text-align: left;
+                padding-bottom: 20px;
+                font-size: 15px;
+            }
+            .timeline ul li div {
+                width: calc(80vw - 60px);
+            }
+            .timeline ul li:nth-child(even) div {
+                left: 65px;
+                text-align: left;
+            }
+            .timeline ul li:nth-child(odd) div {
+                left: 65px;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="timeline">
+        <ul>
+            <li>
+                <div>
+                    <time>2020-2021</time>
+                    <p class="item-tittle">Restaurant management system</p>
+                    <p class="item-header"><b>Itern Web JS</b></p>
+                    <p class="text">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2020-2021</time>
+                    <p class="item-tittle">Restaurant management system</p>
+                    <p class="item-header"><b>Itern Web JS</b></p>
+                    <p class="text">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2020-2021</time>
+                    <p class="item-tittle">Restaurant management system</p>
+                    <p class="item-header"><b>Itern Web JS</b></p>
+                    <p class="text">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2020-2021</time>
+                    <p class="item-tittle">Restaurant management system</p>
+                    <p class="item-header"><b>Itern Web JS</b></p>
+                    <p class="text">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2020-2021</time>
+                    <p class="item-tittle">Restaurant management system</p>
+                    <p class="item-header"><b>Itern Web JS</b></p>
+                    <p class="text">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2020-2021</time>
+                    <p class="item-tittle">Restaurant management system</p>
+                    <p class="item-header"><b>Itern Web JS</b></p>
+                    <p class="text">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <script>
+        (function() {
+            'use strict';
+            var items = document.querySelectorAll(".timeline li");
+
+            function isElementInViewport(el) {
+                var rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function callbackFunc() {
+                for (var i = 0; i < items.length; i++) {
+                    if (isElementInViewport(items[i])) {
+                        items[i].classList.add("in-view");
+                    }
+                }
+            }
+
+            // listen for events
+            window.addEventListener("load", callbackFunc);
+            window.addEventListener("resize", callbackFunc);
+            window.addEventListener("scroll", callbackFunc);
+
+        })();
+    </script>
+</body>
+
+</html>

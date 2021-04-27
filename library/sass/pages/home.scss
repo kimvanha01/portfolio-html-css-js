@@ -5,12 +5,68 @@
     box-sizing: border-box;
 }
 
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 900px) {
+    .timeline ul li div {
+        width: 250px;
+    }
+    .timeline ul li:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timeline ul li {
+        margin-left: 20px;
+        text-align: left;
+        padding-bottom: 20px;
+    }
+    .timeline ul li div {
+        width: calc(80vw - 60px);
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 65px;
+        text-align: left;
+    }
+    .timeline ul li:nth-child(odd) div {
+        left: 65px;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .timeline ul li {
+        margin-left: 20px;
+        text-align: left;
+        padding-bottom: 20px;
+        font-size: 15px;
+    }
+    .timeline ul li div {
+        width: calc(80vw - 60px);
+    }
+    .timeline ul li:nth-child(even) div {
+        left: 65px;
+        text-align: left;
+    }
+    .timeline ul li:nth-child(odd) div {
+        left: 65px;
+        text-align: left;
+    }
+}
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
 @import 'layout/navigation';
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 body {
     margin: 0;
+    overflow-x: hidden;
     h1 {
         font-size: 3.5em;
     }
@@ -23,8 +79,8 @@ body {
     width: 100%;
     height: 120vh;
     .row1 {
-        .jum-img {
-            background-image: url("/cvOnline/library/images/Untited.png");
+        .header-img {
+            background-image: url("/library/images/header.png");
             @include reply-bg;
         }
     }
@@ -68,7 +124,7 @@ body {
     @include layout(100%,
     90vh);
     float: left;
-    background-image: url('/cvOnline/library/images/exp.png');
+    background-image: url('/library/images/exp.png');
     @include reply-bg;
     box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .6);
     filter: grayscale(-1%) contrast(200%) brightness(60%);
@@ -79,8 +135,11 @@ body {
     h2 {
         color: $color2;
     }
-    .progress-level {
+    .progrerss-level {
         margin-top: 5%;
+        margin: 30px auto;
+        width: 80%;
+        padding: 20px;
         .skillbar {
             background: rgba(0, 0, 0, 0.5);
             position: relative;
@@ -99,7 +158,7 @@ body {
             -ms-transition-property: width, background-color;
             -o-transition-property: width, background-color;
             transition-property: width, background-color;
-            .skillbar-tittle {
+            .skillbar-title {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -124,7 +183,7 @@ body {
                 20px);
                 @include skill;
             }
-            .skillbar-bar-peprcent {
+            .skill-bar-percent {
                 position: absolute;
                 right: 10px;
                 top: 0;
@@ -140,7 +199,7 @@ body {
 .experience {
     width: 100%;
     float: left;
-    background-image: url('/cvOnline/library/images/target.png');
+    background-image: url('/library/images/target.png');
     @include reply-bg;
     box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .6);
     filter: grayscale(-1%) contrast(200%) brightness(60%);
@@ -150,10 +209,13 @@ body {
         text-align: center;
         position: inherit;
         margin-bottom: 5%;
-        h1,
-        h2 {
+        h1 {
             color: $color2;
             margin-top: 5%;
+        }
+        h2 {
+            color: $color2;
+            margin-bottom: 5%;
         }
         a {
             color: $color4;
@@ -183,76 +245,75 @@ body {
             }
         }
     }
-    .exp {
-        margin-top: 10%;
-        width: 80%;
-        position: relative;
-        .vertical-line {
-            @include layout(3px,
-            1140px);
-            background-color: $color4;
-            right: 50%;
-            top: 21vh;
-            align-items: center;
-            border: 1px solid $color4;
-            border-radius: 2px;
-            position: absolute;
-            .dot {
-                @include layout(20px,
-                20px);
-                background-color: $color4;
-                border-radius: 50%;
-                display: inline-block;
-                position: absolute;
-            }
-            $i: 6;
-            @while $i>0 {
-                .d#{$i} {
-                    transform: translate(-9px, 1350px-$i*225);
-                    $i: $i - 1;
+    .timeline {
+        ul {
+            padding: 50px 0;
+            li {
+                list-style-type: none;
+                position: relative;
+                width: 4px;
+                margin: 0 auto;
+                background: #03e0f8;
+                &.in-view {
+                    div {
+                        transform: none;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                    &::after {
+                        background: #03e0f8;
+                    }
                 }
-            }
-        }
-        .row {
-            @include row;
-            .col-6 {
-                -ms-flex: 30%;
-                /* IE10 */
-                flex: 30%;
-                height: 225px;
-                padding: 20px;
+                &:nth-last-child(1) {
+                    background: none;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background: inherit;
+                    transition: background .5s ease-in-out;
+                }
                 &:nth-child(odd) {
-                    padding-right: 85px;
+                    div {
+                        left: -115px;
+                        transform: translate3d(200px, 0, 0);
+                    }
                 }
                 &:nth-child(even) {
-                    padding-left: 85px;
+                    div {
+                        left: -180px;
+                        text-align: right;
+                        transform: translate3d(-200px, 0, 0);
+                    }
                 }
-                .item {
-                    width: 340px;
-                    line-height: 1.5em;
+                div {
+                    position: relative;
+                    bottom: 0;
+                    @include layout(300px,
+                    225px);
                     color: $color2;
-                    font-size: 15px;
-                    .year {
-                        font-size: 17px;
-                        color: $color4;
+                    time {
+                        display: block;
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                        margin-bottom: 8px;
+                        color: #03e0f8;
                     }
                     .item-tittle {
-                        margin-top: 5px;
-                        font-size: 20px;
+                        font-size: 17px;
+                        margin-bottom: 10px;
                     }
-                    .item-header {
-                        margin-top: 20px;
-                    }
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all .5s ease-in-out;
                 }
             }
-            .left {
-                text-align: right;
-            }
-        }
-        .h1 {
-            color: #fff !important;
-            text-align: center !important;
-            margin-bottom: 5% !important;
         }
     }
     .container {
@@ -264,7 +325,6 @@ body {
         z-index: 1;
         transform: translate(0, 325px);
         padding-top: 2%;
-        margin-top: 50%;
         .row {
             @include row;
             &::after {
@@ -319,7 +379,7 @@ body {
     @include layout(100%,
     70vh);
     float: left;
-    background-image: url('/cvOnline/library/images/contact.png');
+    background-image: url('/library/images/contact.png');
     @include reply-bg;
     box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .6);
     filter: grayscale(-1%) contrast(200%) brightness(60%);

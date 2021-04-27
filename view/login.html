@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../library/sass/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row1">
+            <div class="column1 ">
+                <div class="navbar">
+                    <div class="social-nav">
+                        <a href="#" class="fa fa-facebook" style="font-size:24px;"></a>
+                        <a href="#" class="fa fa-twitter" style="font-size:24px;"></a>
+                        <a href="#" class="fa fa-google" style="font-size:24px;"></a>
+                        <a href="#" class="fa fa-instagram" style="font-size:24px;"></a>
+                    </div>
+                    <div class="list">
+                        <a href="index.html">Home</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="#contact">Contact</a>
+                        <a href="login.html" style="color: #F7DC4F;">Login</a>
+                    </div>
+
+                </div>
+                <div class=" loginForm">
+                    <header>Login Form</header>
+                    <form>
+                        <div class="input-field">
+                            <input type="text" required>
+                            <label>Email or Username</label>
+                        </div>
+                        <div class="input-field">
+                            <input class="pswrd" type="password" required>
+                            <span class="show">SHOW</span>
+                            <label>Password</label>
+                        </div>
+                        <div class="button">
+                            <div class="inner">
+                            </div>
+                            <button>LOGIN</button>
+                        </div>
+                    </form>
+                    <div class="auth">
+                        Or login with</div>
+                    <div class="links">
+                        <div class="facebook">
+                            <i class="fa fa-facebook-square"><span>Facebook</span></i>
+                        </div>
+                        <div class="google">
+                            <i class="fa fa-google-plus-square"><span>Google</span></i>
+                        </div>
+                    </div>
+                    <div class="signup">
+                        Not a member? <a href="#">Signup now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column1 login-img"></div>
+        </div>
+    </div>
+    <script>
+        var input = document.querySelector('.pswrd');
+        var show = document.querySelector('.show');
+        show.addEventListener('click', active);
+
+        function active() {
+            if (input.type === "password") {
+                input.type = "text";
+                show.style.color = "#1DA1F2";
+                show.textContent = "HIDE";
+            } else {
+                input.type = "password";
+                show.textContent = "SHOW";
+                show.style.color = "#111";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
+@import 'layout/navigation';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+body {
+    margin: 0;
+    h1 {
+        font-size: 3.5em;
+    }
+    .color-number {
+        color: #F7DC4F;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    height: 120vh;
+    .row1 {
+        .jum-img {
+            background-image: url("/cvOnline/library/images/Untited.png");
+            @include reply-bg;
+        }
+    }
+}
+
+.about {
+    @include layout(100%,
+    75vh);
+    float: left;
+    background-color: $color2;
+    display: flex;
+    padding: 0 20px 0 20px;
+    .img-about {
+        @include about-item;
+    }
+    .text-about {
+        width: 50%;
+        padding-right: 10%;
+        margin-top: 5%;
+        h1,
+        p,
+        h4 {
+            color: $color3;
+        }
+        h1 {
+            text-align: center;
+        }
+    }
+    .get {
+        @include layout(30%,
+        40px);
+        border: 1px solid silver;
+        border-radius: 3px;
+        background-color: $color1;
+        transition: .4s;
+        color: $color3;
+    }
+}
+
+.level {
+    @include layout(100%,
+    90vh);
+    float: left;
+    background-image: url('/cvOnline/library/images/exp.png');
+    @include reply-bg;
+    box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .6);
+    filter: grayscale(-1%) contrast(200%) brightness(60%);
+    h1 {
+        color: $color2;
+        margin-top: 5%;
+    }
+    h2 {
+        color: $color2;
+    }
+    .progress-level {
+        margin-top: 5%;
+        .skillbar {
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+            display: block;
+            margin-bottom: 35px;
+            @include layout(100%,
+            20px);
+            @include skill;
+            -webkit-transition: 0.4s linear;
+            -moz-transition: 0.4s linear;
+            -ms-transition: 0.4s linear;
+            -o-transition: 0.4s linear;
+            transition: 0.4s linear;
+            -webkit-transition-property: width, background-color;
+            -moz-transition-property: width, background-color;
+            -ms-transition-property: width, background-color;
+            -o-transition-property: width, background-color;
+            transition-property: width, background-color;
+            .skillbar-tittle {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 125px;
+                font-weight: bold;
+                font-size: 13px;
+                color: $color1;
+                background: #6adcfa;
+                @include skill-b;
+                span {
+                    display: block;
+                    background: rgba(0, 0, 0, 0.1);
+                    padding: 0 20px;
+                    @include layout(125px,
+                    20px);
+                    line-height: 20px;
+                    @include skill-b;
+                }
+            }
+            .skillbar-bar {
+                @include layout(0,
+                20px);
+                @include skill;
+            }
+            .skillbar-bar-peprcent {
+                position: absolute;
+                right: 10px;
+                top: 0;
+                font-size: 11px;
+                height: 35px;
+                line-height: 20px;
+                color: $color1;
+            }
+        }
+    }
+}
+
+.experience {
+    width: 100%;
+    float: left;
+    background-image: url('/cvOnline/library/images/target.png');
+    @include reply-bg;
+    box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .6);
+    filter: grayscale(-1%) contrast(200%) brightness(60%);
+    .portfolio {
+        @include layout(100%,
+        70vh);
+        text-align: center;
+        position: inherit;
+        margin-bottom: 5%;
+        h1,
+        h2 {
+            color: $color2;
+            margin-top: 5%;
+        }
+        a {
+            color: $color4;
+            text-decoration: none;
+        }
+        .project {
+            margin-top: 5%;
+            @include layout(75%,
+            40vh);
+            margin: auto;
+            display: flex;
+            figure {
+                background: $color2;
+                overflow: hidden;
+                img {
+                    @include layout(25vw,
+                    100%);
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                    -webkit-transition: .3s ease-in-out;
+                    transition: .3s ease-in-out;
+                    &:hover {
+                        -webkit-transform: scale(1.3);
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+    }
+    .exp {
+        margin-top: 10%;
+        width: 80%;
+        position: relative;
+        .vertical-line {
+            @include layout(3px,
+            1140px);
+            background-color: $color4;
+            right: 50%;
+            top: 21vh;
+            align-items: center;
+            border: 1px solid $color4;
+            border-radius: 2px;
+            position: absolute;
+            .dot {
+                @include layout(20px,
+                20px);
+                background-color: $color4;
+                border-radius: 50%;
+                display: inline-block;
+                position: absolute;
+            }
+            $i: 6;
+            @while $i>0 {
+                .d#{$i} {
+                    transform: translate(-9px, 1350px-$i*225);
+                    $i: $i - 1;
+                }
+            }
+        }
+        .row {
+            @include row;
+            .col-6 {
+                -ms-flex: 30%;
+                /* IE10 */
+                flex: 30%;
+                height: 225px;
+                padding: 20px;
+                &:nth-child(odd) {
+                    padding-right: 85px;
+                }
+                &:nth-child(even) {
+                    padding-left: 85px;
+                }
+                .item {
+                    width: 340px;
+                    line-height: 1.5em;
+                    color: $color2;
+                    font-size: 15px;
+                    .year {
+                        font-size: 17px;
+                        color: $color4;
+                    }
+                    .item-tittle {
+                        margin-top: 5px;
+                        font-size: 20px;
+                    }
+                    .item-header {
+                        margin-top: 20px;
+                    }
+                }
+            }
+            .left {
+                text-align: right;
+            }
+        }
+        .h1 {
+            color: #fff !important;
+            text-align: center !important;
+            margin-bottom: 5% !important;
+        }
+    }
+    .container {
+        border-radius: 5px;
+        background-color: $color2;
+        color: $color3;
+        padding: 10px;
+        width: 80%;
+        z-index: 1;
+        transform: translate(0, 325px);
+        padding-top: 2%;
+        margin-top: 50%;
+        .row {
+            @include row;
+            &::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .column {
+                float: left;
+                width: 50%;
+                margin-top: 3%;
+                padding: 20px;
+                margin-bottom: 2%;
+                input[type=text],
+                select,
+                textarea {
+                    width: 100%;
+                    padding: 12px;
+                    border: 1px solid #ccc;
+                    margin-top: 6px;
+                    margin-bottom: 16px;
+                    resize: vertical;
+                }
+                input[type=submit] {
+                    background-color: $color3;
+                    color: $color2;
+                    padding: 12px 20px;
+                    border: none;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $color3;
+                    }
+                }
+            }
+            .social-contact {
+                width: 100%;
+                text-align: center !important;
+                a {
+                    text-decoration: none;
+                }
+                .fa {
+                    margin-right: 5%;
+                    margin-bottom: 5%;
+                    color: $color1;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    @include layout(100%,
+    70vh);
+    float: left;
+    background-image: url('/cvOnline/library/images/contact.png');
+    @include reply-bg;
+    box-shadow: inset 0 0 0 999px rgba(0, 0, 0, .6);
+    filter: grayscale(-1%) contrast(200%) brightness(60%);
+    z-index: -1;
+}

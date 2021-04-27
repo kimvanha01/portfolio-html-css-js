@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
+    <title>Portfolio</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('.skillbar').each(function() {
+                jQuery(this).find('.skillbar-bar').animate({
+                    width: jQuery(this).attr('data-percent')
+                }, 3000);
+            });
+        });
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+        }
+        
+        body {
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .navbar {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 50%;
+            height: 75px;
+            z-index: 2;
+        }
+        
+        .navbar .social-nav {
+            display: inline-block;
+            padding: 24px 16px;
+            width: 30%;
+        }
+        
+        .navbar .social-nav .fa {
+            text-align: center;
+            text-decoration: none;
+            margin: 2px;
+            color: #f5f5f5;
+        }
+        
+        .navbar .social-nav .fa:hover {
+            opacity: 0.7;
+        }
+        
+        .navbar .list {
+            width: 80%;
+            margin-right: 5%;
+        }
+        
+        .navbar .list a {
+            float: right;
+            display: block;
+            color: #f5f5f5;
+            padding: 24px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        .navbar .list a:hover {
+            color: #00D646;
+        }
+        
+        .container-fluid {
+            width: 100%;
+            height: 100vh;
+        }
+        
+        .container-fluid .row1 {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        
+        .container-fluid .row1 .column1 {
+            -ms-flex: 50%;
+            flex: 50%;
+            height: 100vh;
+            padding: 20px;
+            background-color: #015761;
+        }
+        
+        .container-fluid .row1 .login-img {
+            background-image: url("/cvOnline/library/images/Untited.png");
+            background-attachment: fixed;
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
+        .column1 {
+            float: left;
+            width: 50%;
+            padding: 20px;
+            margin-bottom: 2%;
+        }
+        /* Clear floats after the columns */
+        
+        .row1:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        
+        @media screen and (max-width: 600px) {
+            .column1,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row1">
+            <div class="column1 ">
+                <div class="navbar">
+                    <div class="social-nav">
+                        <a href="#" class="fa fa-facebook" style="font-size:24px;"></a>
+                        <a href="#" class="fa fa-twitter" style="font-size:24px;"></a>
+                        <a href="#" class="fa fa-google" style="font-size:24px;"></a>
+                        <a href="#" class="fa fa-instagram" style="font-size:24px;"></a>
+                    </div>
+                    <div class="list">
+                        <a href="index.html">Home</a>
+                        <a href="#news">Portfolio</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#contact">Login</a>
+                    </div>
+                    <div class="container">
+                        <header>Login</header>
+                        <form>
+                            <div class="input-field">
+                                <input type="text" required>
+                                <label>Email or Username</label>
+                            </div>
+                            <div class="input-field">
+                                <input class="pswrd" type="password" required>
+                                <span class="show">SHOW</span>
+                                <label>Password</label>
+                            </div>
+                            <div class="button">
+                                <div class="inner">
+                                </div>
+                                <button>LOGIN</button>
+                            </div>
+                        </form>
+                        <div class="auth">
+                            Or login with</div>
+                        <div class="links">
+                            <div class="facebook">
+                                <i class="fa fa-facebook-square"><span>Facebook</span></i>
+                            </div>
+                            <div class="google">
+                                <i class="fa fa-google-plus-square"><span>Google</span></i>
+                            </div>
+                        </div>
+                        <div class="signup">
+                            Not a member? <a href="#">Signup now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column1 login-img"></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+@mixin reply-bg {
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@mixin skill-b {
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+@mixin layout($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin row {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE10 */
+    flex-wrap: wrap;
+}
+
+@mixin about-item {
+    width: 50%;
+    padding-left: 10%;
+    margin-top: 5%;
+}
+
+@mixin skill {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+@mixin trans($th) {
+    transform: translate(-9px, $th);
+    position: absolute;
+}

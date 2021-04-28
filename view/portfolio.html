@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../library/scss/css/portfolio.css">
+    <link rel="stylesheet" href="../library/sass/css/portfolio.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <script type="text/javascript" src="../library/js/jquery.min.js"></script>
+    <script src="../library/js/jquery.mixitup.min.js"></script>
     <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
-    <title>Login</title>
+    <script type="text/javascript">
+        $(function() {
+            $('#Grid').mixitup();
+        });
+    </script>
+    <title>Portfolio</title>
 </head>
 
 <body>
@@ -24,65 +30,56 @@
                         <a href="#" class="fa fa-instagram" style="font-size:24px;"></a>
                     </div>
                     <div class="list">
-                        <a href="index.html">Home</a>
+                        <a href="home.html">Home</a>
                         <a href="portfolio.html" style="color: #F7DC4F;">Portfolio</a>
                         <a href="#contact">Contact</a>
                         <a href="login.html">Login</a>
                     </div>
 
                 </div>
-            </div>
-            <div class="column1 ">
+                <div class="wrapper">
 
-                <div class="column1 port">
-                    <div class="portfolio">
-                        <div class="pr pj1"></div>
-                        <!-- <div class="pr pj2"></div> -->
-                        <!-- <div class="pr pj3"></div> -->
-
-
-                        <div class="pj">
-                            <!-- <div class="pr pj4"></div>
-                            <div class="pr pj5"></div> -->
-
-                        </div>
-                        <div class="pr pj6"></div>
-
+                    <div class="controls">
+                        <ul>
+                            <li class="filter active" data-filter="all">Show All</li>
+                            <li class="filter" data-filter="react">React</li>
+                            <li class="filter" data-filter="angular">Angular</li>
+                            <li class="filter" data-filter="php">PHP</li>
+                            <li class="filter" data-filter="php react">React &amp; PHP</li>
+                        </ul>
                     </div>
-                    <div class="list-project">
-                        <div class="project">
-                            <div class="img-pj">
-                                <img src="../library/images/thumb-1.jpg" alt="project1">
-                            </div>
-                            <div class="des-pj">
-                                <h1><span class="number">01 </span>Decor</h1>
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</h4><br>
-                                <button class="get" type="button">Get in touch</button>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <div class="img-pj">
-                                <img src="../library/images/thumb-4.jpg" alt="project1">
-                            </div>
-                            <div class="des-pj">
-                                <h1><span class="number">01 </span>Decor</h1>
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4><br>
-                                <button class="get" type="button">Get in touch</button>
-                            </div>
-                        </div>
-                        <div class="project">
-                            <div class="img-pj">
-                                <img src="../library/images/thumb-6.jpg" alt="project1">
-                            </div>
-                            <div class="des-pj">
-                                <h1><span class="number">01 </span>Decor</h1>
-                                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h4><br>
-                                <button class="get" type="button">Get in touch</button>
-                            </div>
-                        </div>
-                    </div>
+
+                    <!-- SORT CONTROLS -->
+
+                    <!-- GRID -->
+
+                    <ul id="Grid">
+                        <li class="mix react mix_all" style="display: inline-block;  opacity: 1;">
+
+                            <a href="#"><img src="../library/images/react.jpg" alt=""></a>
+
+                        </li>
+                        <li class="mix php mix_all" style="display: inline-block;  opacity: 1;">
+                            <a href="#"><img src="../library/images/php.png" alt=""></a>
+                        </li>
+                        <li class="mix angular mix_all" style="display: inline-block;  opacity: 1;">
+                            <a href="#"><img src="../library/images/angular.png" alt=""></a>
+                        </li>
+                        <li class="mix php mix_all" style="display: inline-block;  opacity: 1;">
+                            <a href="#"><img src="../library/images/php.png" alt=""></a>
+                        </li>
+                        <li class="mix angular mix_all" style="display: inline-block;  opacity: 1;">
+                            <a href="#"><img src="../library/images/angular.png" alt=""></a>
+                        </li>
+                        <li class="mix react mix_all" style="display: inline-block;  opacity: 1;">
+                            <a href="#"><img src="../library/images/react.jpg" alt=""></a>
+                        </li>
+                        <li class="gap"></li>
+                        <!-- "gap" elements fill in the gaps in justified grid -->
+                    </ul>
                 </div>
             </div>
+            <div class="column1 header-img"></div>
 
         </div>
     </div>

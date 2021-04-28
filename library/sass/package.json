@@ -3,6 +3,6 @@
         "node-sass": "^5.0.0"
     },
     "scripts": {
-        "scss": "node-sass --watch pages/home.scss -o css"
+        "scss": "node-sass --watch pages/login.scss -o css"
     }
 }

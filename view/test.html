@@ -1,151 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- saved from url=(0092)https://www.jqueryscript.net/demo/jQuery-Plugin-For-Filtering-Sorting-Html-Elements-MixItUp/ -->
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://kit.fontawesome.com/a076d05399.js">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>MixItUp Basic Example</title>
+    <script type="text/javascript" src="../library/js/jquery.min.js"></script>
+    <script src="../library/js/jquery.mixitup.min.js"></script>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            box-sizing: border-box;
+        .wrapper {
+            margin: 50px auto 0 auto;
+            max-width: 640px;
         }
         
-        body {
-            height: 100vh;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .navbar {
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            width: 50%;
-            height: 75px;
-            z-index: 2;
-        }
-        
-        .navbar .social-nav {
+        .controls {
             display: inline-block;
-            padding: 24px 16px;
-            width: 30%;
+            width: 640px;
+            vertical-align: top;
         }
         
-        .navbar .social-nav .fa {
+        .controls ul {
+            display: flex;
+        }
+        
+        .controls li {
+            margin-left: 20px;
+            cursor: pointer;
+            list-style-type: none;
             text-align: center;
-            text-decoration: none;
-            margin: 2px;
-            color: #f5f5f5;
+            width: 20%;
         }
         
-        .navbar .social-nav .fa:hover {
-            opacity: 0.7;
+        .controls li.active {
+            font-weight: 700;
+            background: #F7DC4F;
+            width: 20%;
         }
         
-        .navbar .list {
-            width: 80%;
+        #Grid {
+            width: 640px;
+            text-align: justify;
+            font-size: 0.1px;
         }
         
-        .navbar .list a {
-            text-align: center;
+        #Grid:after {
+            content: '';
             display: inline-block;
-            color: #f5f5f5;
+            width: 100%;
+        }
+        
+        #Grid .mix {
+            display: none;
+            opacity: 0;
+            width: 200px;
+            height: 200px;
+            vertical-align: top;
+            margin-bottom: 20px;
+            background: #ccc;
+            color: #fff;
+            font-size: 30px;
             text-align: center;
-            padding: 24px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            margin-right: 20px;
+            line-height: 200px;
         }
         
-        .navbar .list a:hover {
-            color: #00D646;
+        #Grid .gap {
+            display: inline-block;
+            width: 200px;
         }
-        
-        .container-fluid .row {
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-        
-        .container-fluid .row .column {
-            -ms-flex: 50%;
-            flex: 50%;
-            height: 100vh;
-            padding: 20px;
-            background-color: #015761;
-        }
-        
-        .container-fluid .row .login-img {
-            background-image: url("/cvOnline/library/images/148635159_2472206759740808_953318677073763355_n.jpg");
-            background-position: 50%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            position: relative;
-        }
-        
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
     </style>
+    <script type="text/javascript">
+        $(function() {
+            $('#Grid').mixitup();
+        });
+    </script>
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="column ">
-                <div class="navbar">
-                    <div class="social-nav">
-                        <a href="#" class="fa fa-facebook" style="font-size:24px;"></a>
-                        <a href="#" class="fa fa-twitter" style="font-size:24px;"></a>
-                        <a href="#" class="fa fa-google" style="font-size:24px;"></a>
-                        <a href="#" class="fa fa-instagram" style="font-size:24px;"></a>
-                    </div>
-                    <div class="list">
-                        <a href="index.html">Home</a>
-                        <a href="#news">Portfolio</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#contact">Login</a>
-                    </div>
+    <div class="wrapper">
 
-                </div>
-
-            </div>
-            <div class="column login-img"></div>
+        <div class="controls">
+            <ul>
+                <li class="filter active" data-filter="all">Show All</li>
+                <li class="filter" data-filter="react">React</li>
+                <li class="filter" data-filter="angular">Angular</li>
+                <li class="filter" data-filter="php">PHP</li>
+                <li class="filter" data-filter="php react">React &amp; PHP</li>
+            </ul>
         </div>
+
+        <!-- SORT CONTROLS -->
+
+        <!-- GRID -->
+
+        <ul id="Grid">
+            <li class="mix react mix_all" style="display: inline-block;  opacity: 1;">
+
+                <a href="#"><img src="../library/images/react.jpg" width="200px" height="200px" alt=""></a>
+
+            </li>
+            <li class="mix php mix_all" style="display: inline-block;  opacity: 1;">
+                <a href="#"><img src="../library/images/php.png" width="200px" height="200px" alt=""></a>
+            </li>
+            <li class="mix angular mix_all" style="display: inline-block;  opacity: 1;">
+                <a href="#"><img src="../library/images/angular.png" width="200px" height="200px" alt=""></a>
+            </li>
+            <li class="mix php mix_all" style="display: inline-block;  opacity: 1;">
+                <a href="#"><img src="../library/images/php.png" width="200px" height="200px" alt=""></a>
+            </li>
+            <li class="mix angular mix_all" style="display: inline-block;  opacity: 1;">
+                <a href="#"><img src="../library/images/angular.png" width="200px" height="200px" alt=""></a>
+            </li>
+            <li class="mix react mix_all" style="display: inline-block;  opacity: 1;">
+                <a href="#"><img src="../library/images/react.jpg" width="200px" height="200px" alt=""></a>
+            </li>
+            <li class="gap"></li>
+            <!-- "gap" elements fill in the gaps in justified grid -->
+        </ul>
     </div>
-
-    <script>
-        var input = document.querySelector('.pswrd');
-        var show = document.querySelector('.show');
-        show.addEventListener('click', active);
-
-        function active() {
-            if (input.type === "password") {
-                input.type = "text";
-                show.style.color = "#1DA1F2";
-                show.textContent = "HIDE";
-            } else {
-                input.type = "password";
-                show.textContent = "SHOW";
-                show.style.color = "#111";
-            }
-        }
-    </script>
 </body>
 
 </html>
